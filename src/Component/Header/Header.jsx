@@ -14,7 +14,7 @@ export function Header(){
         <div id="Crosure">
             <div id="main-header">
                 <div id="title">
-                    <img src="./public/logo.jpg"/>
+                    <img src="logo.jpg"/>
                     <h1>ShaFood</h1>
                     </div>
                     <div className="main-header-buttons">

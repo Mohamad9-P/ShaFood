@@ -29,8 +29,8 @@ const [slider,setslider]=useState(0)
                 {/* <img className="berger" src="berger.png"/> */}
                 <img className="image" src={data[slider].image}/>
                 <div className="NextOrPrev">
-                    <button onClick={()=>decrease()} className="prevB"><img src="./public/next.png" alt="" /></button>
-                    <button onClick={()=>increase()}><img src="./public/next.png" alt="hello" /></button>
+                    <button onClick={()=>decrease()} className="prevB"><img src="next.png" alt="" /></button>
+                    <button onClick={()=>increase()}><img src="next.png" alt="hello" /></button>
                 </div>
             </div>        
     )
