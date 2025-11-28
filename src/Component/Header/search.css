@@ -1,0 +1,74 @@
+.Search{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Search span{
+    display: flex;
+    justify-content: center;
+    height: 40px;
+}
+.Search span input{
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(167, 167, 167, 0.534);
+    width: 20rem;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+.Search span button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.534);
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px 10px 20px;
+}
+.Search div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3 , 33.33333333333%);
+    place-items: center;
+    place-content: center;
+    gap: 1px; /* اختیاری برای فاصله بین li ها */
+    margin-bottom: 10px;
+}
+.Search div li{
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    background-color:black;
+    padding: 10px;
+    width: 90%;
+    margin-top: 20px;
+}
+.Search div li h5{
+    color: white;
+    font-size: smaller;
+}
+.Search div li img{
+    width: 100%;
+    height:100%;
+}
+.Search div li p{
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.Search div li button{
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.Search div h1{
+    grid-column: 2;
+    text-align: center;
+    margin-top: 20px;
+    font-size: large;
+    color: rgba(248, 102, 102, 0.589);
+}

@@ -38,6 +38,8 @@
   background-color: #ffc400;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   transition: 0.5s;
+  display: flex;
+  align-items: center;
 }
 .yellowbutton.about{
     padding: 10px 25px 10px 25px;

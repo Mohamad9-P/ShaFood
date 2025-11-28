@@ -365,33 +365,53 @@ h1 {
   flex-direction: column;
 }
 .orderbord{
+  width: 95%;
+  height: 150px;
   background-color: #b1b1b1a5;
-  padding-top: 20px;
-  padding-bottom: 10px;
   border-radius: 10px;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.orderbord img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  border-radius: 5px;
+  filter: brightness(45%);
 }
 .orderlist{
-  display:flex;
-}
-.orderlist img{
-  width: 50px;
-  height: 50px;
-  border-radius: 200px;
+  display:grid;
+  height: 100%;
+  grid-template-columns: 300px 80px 100px 70px;
+  position: relative;
+  place-items: center;
 }
 .orderlist li{
-  padding-top: 18px;
-  padding-left: 10px;
+  list-style: none;
+  color: white;
+  font-size: larger;
 }
 .orderlist p{
   font-size: large;
   font-weight: bold;
   padding-bottom: 5px;
   padding-left:10px;
-  color: rgb(50, 50, 50);
+  color: rgb(255, 255, 255);
 }
 .orderlist h3{
-  padding-left:250px;
+  color: white;
   font-weight: bold;
+}
+.orderbord button{
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  transition: 1s;
+}
+.orderbord button:hover{
+  transform: scale(1.2);
 }
 .EmptySearch{
   text-align: center;

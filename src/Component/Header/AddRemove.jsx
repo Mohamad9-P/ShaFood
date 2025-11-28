@@ -11,7 +11,6 @@ export default function AddRemove(){
     const cartData=useSelector(store=>store.Carts.CartMeals)
     const dispatch=useDispatch()
     const price=cartData.reduce((acc,item)=> {return acc + (+item.price * item.Selected)},0)
-    //console.log(openModal)
     return(
         <>
         {ModalStatus==="add"&&<Modal>

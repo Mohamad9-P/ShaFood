@@ -1,25 +1,23 @@
-import {useActionState} from "react"
+import {useActionState, useEffect} from "react"
 import Modal from "../UI/Modal"
-import usehttp from "../../Hook/useHttp"
+// import usehttp from "../../Hook/useHttp"
 import Buttons from "../UI/Buttons"
 import { useDispatch, useSelector } from "react-redux"
 import { ModalAction } from "../../store/Modal-Slice"
 
-const config={method:"POST",headers:{"Content-type" : "application/json"}}
+// const config={method:"POST",headers:{"Content-type" : "application/json"}}
 
 export default function Form(){
     const cartData=useSelector(store=>store.Carts.CartMeals)
     
     const ModalStatus=useSelector(store=>store.Modal.modalStatus)
     const dispatch=useDispatch()
-    const {data,isLoading,error,sendHttp}=usehttp('http://localhost:3000/orders',config)
-    
+    // const {data,isLoading,error,sendHttp}=usehttp('http://localhost:3000/orders',config)
     const price=cartData.reduce((acc,item)=> {return acc + (+item.price * item.Selected)},0)
-    console.log(price)
     async function handelaction(state,formdata){
         const data=Object.fromEntries(formdata.entries())
         let error=[]
-        console.log(formdata)
+        // console.log(formdata)
         if(!data.name.trim("")){
             error.push("Complide your Fullname")
         }
@@ -35,12 +33,17 @@ export default function Form(){
         if(error.length > 0){
             return {error:error , defaultvalue:data}
         }
-        console.log(cartData)
-        await sendHttp(JSON.stringify({order:{
-            items:cartData,customer:data
-          }}))
+        const oldData = JSON.parse(localStorage.getItem("FormData")) || [];
+        const NewData=cartData.map(prev=>{ return {name:prev.name ,id:prev.id , price:prev.price , Selected:prev.Selected , image:prev.image}})
+        const updatedData = [...oldData.flat(2),NewData.flat(2) ];
+        localStorage.setItem("FormData",JSON.stringify(updatedData))
+        
+
+        // await sendHttp(JSON.stringify({order:{
+        //     items:cartData,customer:data
+        //   }}))
         dispatch(ModalAction.opening("CheckOut"))
-        return {error:null,isLoading}
+        return {error:null,}
     }
 
     const [action,actionstate,pending]=useActionState(handelaction,{error:null})

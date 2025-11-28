@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { act } from "react"
 
 export const cartData=createSlice({
     name:"Data",
-    initialState:{CartMeals:[],CartOrders:[],Search:""},
+    initialState:{CartMeals:[],CartOrders:[],Search:"" , dataSearch:[]},
     reducers:{
+
         addCart(state,action){
             let cart=[...state.CartMeals]
             const cartindex=cart.findIndex(prev=>prev.id===action.payload.id)
@@ -39,7 +41,19 @@ export const cartData=createSlice({
             
         },
         handelSearch(state,action){
-            state.Search=action.payload
+            state.Search=action.payload[0]
+            let updating=[...state.dataSearch]
+            const nameMeals=action.payload[1].map(item=>item.name)
+            const name=nameMeals.filter(item=>item.includes(action.payload[0]))
+            if((name.length < 1 || updating.length < 1) && !action.payload[0]){
+                  updating=["food not found!"]
+                  
+                }
+            if((action.payload[0].length > 0 && name.length >1 )){
+                updating=name.map(item=>action.payload[1].filter(data=>data.name===item)).flat(1)
+              }
+              console.log(updating)
+              state.dataSearch=updating
         }
 
     }
