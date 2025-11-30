@@ -408,6 +408,9 @@ h1 {
     padding-top: 20px;
     width: 97%;
   }
+  .main-header-buttons{
+    height: 30px;
+  }
   #main-header{
     position: fixed;
     height: 150px;
@@ -437,7 +440,7 @@ h1 {
     align-items: center;  
   }
   .description h1{
-    font-size: 4em;
+    font-size: 3.7em;
   }
   .description p{
     text-align: center;
