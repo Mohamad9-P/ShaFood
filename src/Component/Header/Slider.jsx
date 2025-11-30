@@ -25,14 +25,14 @@ const [slider,setslider]=useState(0)
 
     },[data.length])
     return(
-            <div className="slider">
+            <section className="slider">
                 {/* <img className="berger" src="berger.png"/> */}
                 <img className="image" src={data[slider].image}/>
                 <div className="NextOrPrev">
                     <button onClick={()=>decrease()} className="prevB"><img src="next.png" alt="" /></button>
                     <button onClick={()=>increase()}><img src="next.png" alt="hello" /></button>
                 </div>
-            </div>        
+            </section>        
     )
 }
 

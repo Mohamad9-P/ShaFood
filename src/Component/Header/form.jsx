@@ -54,7 +54,7 @@ export default function Form(){
         {ModalStatus==="Form" && <Modal>
             <form action={actionstate}>
                 <h2>Checkout</h2>
-                <h4>{price}$</h4>
+                <h4 className="price">{price}$</h4>
                 <div className="divform">
                     <label htmlFor="name">Full Name:</label>
                     <input id="name" name="name" type="text" 

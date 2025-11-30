@@ -2,6 +2,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -33,7 +35,6 @@ h1 {
   list-style: none;
   margin: 3rem auto;
   padding: 0.5rem;
-
   display: grid;
   text-align: center;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -85,7 +86,7 @@ h1 {
   margin: 0.75rem 0;
 }
 .meal-item button{
-  width: 100px;
+ 
   margin-bottom: 30px;
   padding: 6px 13px 6px 13px;
   border-radius: 5px;
@@ -109,12 +110,6 @@ h1 {
   margin: 0;
   border-radius: 4px;
 }
-
-
-.meal-item-actions {
-  margin-bottom: 1.5rem;
-}
-
 .cart h2 {
   margin: 1rem 0;
 }
@@ -124,22 +119,6 @@ h1 {
   margin: 0.5rem 0;
   padding: 0;
 }
-
-.modal-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-}
-
-.modal-actions .text-button {
-  color: #1d1a16;
-}
-
-.modal-actions .text-button:hover,
-.modal-actions .text-button:active {
-  color: #312c1d;
-}
-
 .cart-total {
   display: flex;
   justify-content: flex-end;
@@ -254,14 +233,18 @@ h1 {
 }
 
 .modal {
-  background-color: #e4ddd4;
-  border-radius: 6px;
-  border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  position: fixed;          /* نکته ۱: دیالوگ را از Flow خارج می‌کند */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;                /* نکته ۲: مرورگر وسط‌چینی پیش‌فرض را خنثی می‌کند */
   padding: 1rem;
-  width: 60%;
-  max-width: 40rem;
-  animation: fade-slide-up 0.3s ease-out forwards;
+  width: 90%;
+  max-width: 700px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  max-height: 70vh;
 }
 
 .modal::backdrop {
@@ -384,7 +367,7 @@ h1 {
 .orderlist{
   display:grid;
   height: 100%;
-  grid-template-columns: 300px 80px 100px 70px;
+  grid-template-columns: 45% 20% 25% 10%;
   position: relative;
   place-items: center;
 }
@@ -413,141 +396,197 @@ h1 {
 .orderbord button:hover{
   transform: scale(1.2);
 }
-.EmptySearch{
-  text-align: center;
-  background-color: #ff6161b5;
-  border-radius: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.EmptySearch h2{
-  font-style: italic;
-  font-size: xx-large;
-}
-.EmptySearch img{
-  width: 45px;
-  height: 45px;
-}
-/*.burger-menu button{
-  height: 43px;
-}
-.burger-menu button img{
-  height: 30px;
-}
-.Hamburger-menu{
-  background-color: #ffffff0a;
-  width: 10rem;
-  height: 10rem;
-  position: absolute;
-  margin-left: 10px;
-  margin-top: 4px;
-  border-radius: 10px;
-}
-*/
-.welcomgame{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.welcomgame h2{
-  font-size: xx-large;
-}
-.welcomgame button{
-  padding: 10px 19px 10px 19px;
-  border-radius: 5px;
-  border: none;
-  background-color: #e7b102;
-  color: #212121c0;
-  font-size:large;
-}
-.all-game{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.box-game{
-  display: flex;
-  flex-direction: row;
 
-}
-.player-box{
-  width: 13rem;
-  height: 10rem;
-  border: #000000 solid 1px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.player-box img{
-  width: 79px;
-  height: 79px;
-}
-.bot-box{
-  width: 13rem;
-  height: 10rem;
-  border: #000000 solid 1px;
-}
-.time-box{
-  width: 5rem;
-  border: #000000 solid 1px;
-}
-.circle ul {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin-right: 30px;
-}
-.circle ul li{
-  list-style: none;
-  border-radius: 100px;
-  width: 25px;
-  border-radius: 100px;
-  height: 25px;
-  margin: 0px 10px 0px 10px;
 
-}
-.Win{
-  background-color: rgb(41, 255, 41);
-  border-radius: 100px;
+
+@media (max-width: 768px) {
+  #Crosure{
+
+    width: 100%;
+  }
+  #main-header{
+    padding-top: 20px;
+    width: 97%;
+  }
+  #main-header{
+    position: fixed;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    padding-bottom:0.5rem;
+  }
+  .description{
+    width: 90%;
+    height: 60vh;
+    top: 0px;
+    left: 0px;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  .center-header{
+    height: 100vh;
+  }
+  .center-header div{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+  }
+  .description h1{
+    font-size: 4em;
+  }
+  .description p{
+    text-align: center;
+    font-size: 0.8em;
+    width: 70%;
+    line-height:18px;
+    padding-bottom: 10px;
+  }
+  .yellowbutton{
+    font-size: 0.8rem;
+    padding: 4px 7px 3px 7px;
+    
+  }
+  .yellowbutton svg{
+    width: 15px;
+    height: 15px;
+  }
+  .yellowbutton.about{
+    font-size: 0.8rem;
+    padding: 5px 8px 5px 8px;
+  }
+  #main-header #title{
+    gap: 3px;
+  }
+  #main-header #title h1{
+    padding-left: 0px;
+    font-size: smaller;
+  }
+  #main-header #title img{
+    width: 2rem;
+    height: 2rem;
+  }
+  .slider{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    margin: 0px;
+    padding: 0px;
+  }
+  .slider img{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100vh;
+    border-radius: 0px;
+    filter: brightness(50%);
+  }
+  .icon{
+    display: none;
+  }
+  .slider button{
+    display: none;
+  }
+  .meal-item h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0.75rem 0;
+  }
+  .meal-item button{
+    padding: 0.1rem 0.1rem;
+    font-size: 0.7rem;
+  }
+  .meal-item p{
+    font-size: 0.6rem;
+  }
+  .meal-item-description{
+    margin: 0.1rem;
+  }
+  .meal-item-price{
+    padding: 0.2rem 1rem;
+    font-size: small;
+  }
+  #meal{
+    position: relative;
+    width: 90%;
+    display: flex;
+    justify-self: center;
+  }
+  #meals{
+    width: 90%;
+    position: relative;
+    grid-template-columns: repeat(2, 50%);
+    place-content: center;
+    place-items: center;
+    gap: 0.5rem;
+  }
+  .meal-item{
+    width: 100%;
+  }
+  .meal-item img {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+  }
+  .meal-item h3{
+    font-size: small;
+  }
+  .meal-item p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.5rem;
+  }
+  .meal-item button{
+    padding: 0.2rem 0.6rem;
+    font-size: 0.69rem;
+    margin-bottom: 16px;
+  }
+  .empty-Orders img{
+    width: 35%;
+  }
+  .empty-Orders h3{
+    font-size: 1.04rem;
+  }
+  .h1Orders h1{
+    font-size: 1.1rem;
+  }
+  .h1Orders img{
+    width: 1.8rem;
+  }
+  .cart-item p {
+    font-size: 0.75rem;
+  }
+  .cart-item button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: smaller;
+  }
+  .price{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 0.9rem;
+  }
+  .buttons button{
+    margin-left: 6px;
+    font-size: 0.8rem;
+  }
   
-}
-.Draw{
-  background-color: rgb(255, 255, 168);
-  border-radius: 100px;
-}
-.Lost{
-  background-color: rgb(255, 109, 109);
-  border-radius: 100px;
-}
-.buttons-game button{
-  border: none;
-  background-color: rgba(126, 252, 0, 0);
-  padding: 0px 10px 0px 10px;
-}
-.buttons-game button:hover{
-  border-radius: 6px;
-  background-color: rgba(198, 198, 198, 0.553);
-}
-.buttons-game button img{
-  width: 70px;
-  height: 70px;
-}
-.progress{
-  display: flex;
-  justify-content: center;
-}
-.LostOrWin{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.LostOrWin span h3{
-  text-align: center;
-  color: #757859;
+  .orderbord{
+    height: 100px;
+  }
+  .modal{
+    top: 40%;
+    max-height: 60vh;
+  }
 }

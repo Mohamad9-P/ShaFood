@@ -92,21 +92,19 @@
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  margin-left: 3rem;
-  top: 75px;
-  left: 50px;
-  position: relative;
+  margin-left: 5rem;
+  padding-top: 30px;
   z-index: 1;
   animation: Welcometext 1.3s ease-in;
 }
 
 .description h1 {
-  font-size: 6rem;
-  
+  font-size: 6.5em;
   font-family:'Courier New', Courier, monospace;
 }
 .description p{
   padding: 0px;
+  padding-bottom: 10px;
   margin-top: 0px;
   width: 34rem;
   font-size: medium;
@@ -142,18 +140,18 @@
 }
 .slider{
   box-sizing: border-box;
-  width:99%;
+  width:100%;
   height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 60px;
+  padding-left: 2%;
 }                                                                                                                                                                                                                                                                                                                                
 .image{
   width: 60%;
-  height: 70%;
+  height: 60%;
   object-fit:cover;
   border-radius: 10px;
   object-position: center;
@@ -183,33 +181,33 @@
     }
 }
 .icon.berger{
-    top: 180px;
-    left: 100px;
+    top: 30%;
+    left: 8%;
     rotate: 10deg;
 }
 .icon.hotdog{
-    top: 290px;
-    left: 700px;
+    top: 40%;
+    left: 40%;
     rotate: 14deg;
 }
 .icon.taco{
-    top: 20px;
-    left: 600px;
+    top: 3%;
+    left: 30%;
     rotate: 5deg;
 }
 .icon.pizza{
-    top: 440px;
-    left: 800px;
+    top: 20%;
+    left: 54%;
     rotate: 10deg;
 }
 .icon.mac{
-    top: 400px;
-    left: 400px;
+    top: 60%;
+    left: 16%;
     rotate: 22deg;
 }
 .icon.douth{
-    top: 0px;
-    left: 1300px;
+    top: 1%;
+    left: 80%;
     rotate: 10deg;
 }
 .fade{

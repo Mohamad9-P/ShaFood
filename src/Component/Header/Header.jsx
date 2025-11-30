@@ -35,13 +35,15 @@ export function Header(){
                     <img src='douth.png' className='icon douth'/>
             
             <div className="center-header">
-                    <div className="description">
-                    <h1><span>Delicious</span></h1>
-                    <h1>FOOD</h1>
-                    <p>
-                        Discover a world of delicious and diverse flavors! Transform every meal into an unforgettable experience with our fresh, high-quality dishes.
-                    </p>
-                   <button  className='yellowbutton about' onClick={()=>dispatch(ModalAction.opening("About"))} >About</button>
+                    <div>
+                        <div className="description">
+                            <h1><span>Delicious</span></h1>
+                            <h1>FOOD</h1>
+                            <p>
+                                Discover a world of delicious and diverse flavors! Transform every meal into an unforgettable experience with our fresh, high-quality dishes.
+                            </p>
+                            <button  className='yellowbutton about' onClick={()=>dispatch(ModalAction.opening("About"))} >About</button>
+                        </div>
                 </div>
                 <Slider/>
             </div>

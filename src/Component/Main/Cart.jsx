@@ -6,7 +6,7 @@ import { data } from "../../data"
 export default function Cart(){
     const dispatch=useDispatch()
     return(
-        <ul id="meals">
+        <div id="meals">
             {data.map(prev=>{
                 return(
                     <li key={prev.id} className="meal-item" onint>
@@ -22,6 +22,6 @@ export default function Cart(){
                 )
                 })
             }
-        </ul>
+        </div>
     )
 }
