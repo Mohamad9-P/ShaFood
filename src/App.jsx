@@ -1,4 +1,3 @@
-
 import AddRemove from "./Component/Header/AddRemove";
 import { Header } from "./Component/Header/Header";
 import MainCart from "./Component/Main/maincart";
@@ -8,7 +7,6 @@ import Orders from "./Component/Header/Orders";
 import About from "./Component/Header/About";
 import Search from "./Component/Header/search";
 
-
 function App() {
   // const dispatch=useDispatch()
   //   const {data,error,isLoading:wait}=usehttp("http://localhost:3000/meals")
@@ -17,15 +15,15 @@ function App() {
   //   }, [data])
   return (
     <>
-        <Header></Header>
-        <MainCart/>
-        <AddRemove/>
-        <Form/>
-        <Orders/>
-        <About/>
-        <Success/>
-        <Search/>
-        {/* <Game/> */}
+      <Header></Header>
+      <MainCart />
+      <AddRemove />
+      <Form />
+      <Orders />
+      <About />
+      <Success />
+      <Search />
+      {/* <Game/> */}
     </>
   );
 }
